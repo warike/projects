@@ -35,7 +35,17 @@ Scoodit is an iOS app that helps users identify ingredients from images or voice
 	•	PMAlertController & Toaster: UI notifications and alerts
 	
 
-<img src="./../assets/scoodit/scoodit-01.jpeg" alt="App" height="200">
-<img src="./../assets/scoodit/scoodit-02.jpeg" alt="App" height="200">
-<img src="./../assets/scoodit/scoodit-03.jpeg" alt="App" height="200">
-<img src="./../assets/scoodit/scoodit-04.jpeg" alt="App" height="200">
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+  <div style="flex: 1 1 200px;">
+    <img src="./../assets/scoodit/scoodit-01.jpeg" alt="App" height="200">
+  </div>
+  <div style="flex: 1 1 200px;">
+    <img src="./../assets/scoodit/scoodit-02.jpeg" alt="App" height="200">
+  </div>
+  <div style="flex: 1 1 200px;">
+    <img src="./../assets/scoodit/scoodit-03.jpeg" alt="App" height="200">
+  </div>
+  <div style="flex: 1 1 200px;">
+    <img src="./../assets/scoodit/scoodit-04.jpeg" alt="App" height="200">
+  </div>
+</div>
