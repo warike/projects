@@ -22,7 +22,6 @@ Architecture & Infrastructure
 	•	External Samtech GPS integration via HTTP APIs
 	•	Remote data sync and event-driven notifications from cloud GPS service
 
-
-![screenshot](./../assets/claro-gps/screen-0.webp "App"){: height="200"}
-![screenshot](./../assets/claro-gps/screen-1.webp "App"){: height="200"}
-![screenshot](./../assets/claro-gps/screen-2.webp "App"){: height="200"}
+<img src="./../assets/claro-gps/screen-0.webp" alt="App" height="200">
+<img src="./../assets/claro-gps/screen-1.webp" alt="App" height="200">
+<img src="./../assets/claro-gps/screen-2.webp" alt="App" height="200">
