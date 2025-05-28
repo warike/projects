@@ -1,20 +1,20 @@
 
 
-## Scoodit — Smart Ingredient Scanner & Recipe Generator
+# Scoodit — Smart Ingredient Scanner & Recipe Generator
 
-### Overview
+## Overview
 
 Scoodit is an iOS app that helps users identify ingredients from images or voice input, and generates personalized recipes. It aims to reduce food waste and promote healthier, budget-friendly eating habits.
 
 
-### Key Features
+## Key Features
 	•	Image Recognition: Uses Clarifai API to identify ingredients from camera or photo library.
 	•	Voice Input: Users can add ingredients via voice.
 	•	Personalized Recipes: Suggests recipes based on user preferences, intolerances, and availability.
 	•	Shopping Integration: Add missing ingredients to a list or share via SMS/WhatsApp.
 	•	Profile-Based Filtering: Filters out ingredients based on user-defined dislikes or allergies.
 
-### Technical Highlights
+## Technical Highlights
 	•	Language: Swift 3.0
 	•	Architecture: MVC (Model-View-Controller)
 	•	iOS Version: Minimum iOS 10.0
@@ -26,7 +26,7 @@ Scoodit is an iOS app that helps users identify ingredients from images or voice
 	•	Realm for local persistence
 	•	Firebase for user auth and cloud data
 
-### Pods & Libraries
+## Pods & Libraries
 	•	Firebase (Auth, Core, Database, Messaging): Realtime user and data management
 	•	AWSS3: Upload/download ingredient photos to S3
 	•	RealmSwift: Local data storage
@@ -35,17 +35,12 @@ Scoodit is an iOS app that helps users identify ingredients from images or voice
 	•	PMAlertController & Toaster: UI notifications and alerts
 	
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-  <div style="flex: 1 1 200px;">
-    <img src="./../assets/scoodit/scoodit-01.jpeg" alt="App" height="200">
-  </div>
-  <div style="flex: 1 1 200px;">
-    <img src="./../assets/scoodit/scoodit-02.jpeg" alt="App" height="200">
-  </div>
-  <div style="flex: 1 1 200px;">
-    <img src="./../assets/scoodit/scoodit-03.jpeg" alt="App" height="200">
-  </div>
-  <div style="flex: 1 1 200px;">
-    <img src="./../assets/scoodit/scoodit-04.jpeg" alt="App" height="200">
-  </div>
-</div>
+## Screenshots
+<table>
+  <tr>
+    <td><img src="./../assets/scoodit/scoodit-01.jpeg" alt="App" height="150"></td>
+    <td><img src="./../assets/scoodit/scoodit-02.jpeg" alt="App" height="150"></td>
+    <td><img src="./../assets/scoodit/scoodit-03.jpeg" alt="App" height="150"></td>
+    <td><img src="./../assets/scoodit/scoodit-04.jpeg" alt="App" height="150"></td>
+  </tr>
+</table>
