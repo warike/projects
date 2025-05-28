@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:id="@+id/item_vehiculo"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/txtPatente"
+        android:gravity="center_vertical"
+        android:text="Patente"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:dividerPadding="2dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_weight="49"
+            android:paddingRight="5dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Desde:"
+                    android:id="@+id/textView25"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/spinDesdeDia"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/dias_str"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5">
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinDesdeHora"
+                    android:layout_weight="5" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinDesdeMin"
+                    android:layout_weight="5" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_weight="49"
+            android:paddingLeft="5dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Hasta:"
+                    android:id="@+id/textView26"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/spinHastaDia"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/dias_str"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5">
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinHastaHora"
+                    android:layout_weight="5" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinHastaMin"
+                    android:layout_weight="5" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+    <div class="row">
+    <h1>Entries</h1>
+      <div class="col-md-12">
+        <div class="col-md-2 top15">
+          <%= link_to '<span class="glyphicon glyphicon-plus-sign"></span> New Entry'.html_safe,"#", :class => 'btn btn-primary', :data => {:toggle =>'modal', :target =>'#modal_entry'}    %>
+        </div>
+        <%= render "entries/form" %>
+      </div>
+      <div class="col-md-12 top15">
+        <table id="sort" class="table table-striped">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Display Order</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody id="sortable" data-update-url="<%= sort_entries_url %>">
+          <% if @entries.blank? %>
+              <tr class="active">
+                <td class="text-center text-info" colspan="5"> <i><b><%= @startup.name %></b> does not have any entries right now!</i></td>
+              </tr>
+          <% else %>
+              <% @entries.order(show_order: :asc).each do |entry| %>
+                  <%= content_tag_for :tr, entry do %>
+                    <td><%= entry.title %></td>
+                    <td><%= entry.entry_type.capitalize %></td>
+                    <td><%= entry.updated_at.strftime("%m/%d/%Y")  %></td>
+                    <td><%= entry.show_order %></td>
+                    <td><%= link_to '', edit_entry_path(entry), :class => 'btn btn-info glyphicon glyphicon-edit' %>&nbsp;<%= link_to '', entry, method: :delete, data: { confirm: 'Are you sure you want delete this entry?' }, :class => 'btn btn-danger glyphicon glyphicon-remove-sign' %></td>
+                  <%end%>
+              <% end %>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>

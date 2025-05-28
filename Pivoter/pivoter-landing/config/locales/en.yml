@@ -1,0 +1,39 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  cloud_title: "Validation"
+  cloud_description: "Pivot early-stage ideas through community and get key metrics to know what you are missing."
+  menu: "menu"
+  email_title: "Email address"
+  email_placeholder: "Enter your email"
+  email_button: "Get early access"
+  email_error: "You forgot to enter a valid email address."
+  tracktion_title: "Traction"
+  tracktion_description: "Find, increase and measure your traction through different channels and customer segments/targets "
+  networking: "Social Impact"
+  networking_description: "Find key partners, team members, investors and entrepreneurs with common interests."
+  email_confirmation: "Pivoter - Confirmation Email"
+  alert: "Yay! Your request has been sent <b>successfully</b>!"
+  hi: "Hey Super Entrepreneur!"
+  confirm: "We have received your request and now you are in our waiting list!
+            Want to cut in line and validate your ideas NOW?"
+  invitation: "Awesome! Get 5 of your friends to sign up with this unique URL:"

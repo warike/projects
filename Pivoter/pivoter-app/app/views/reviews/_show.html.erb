@@ -1,0 +1,23 @@
+<div class="row-fluid well">
+
+  <%
+     #Funcion que recolecta todas las Reviews del current pivot
+     average_pivot_reviews = Hash.new
+     current_pivot_startup = Pivot.where("startup_id = ? AND status = ?",@startup.id, true).order(:created_at).take
+     if !current_pivot_startup.nil?
+       current_pivot_startup.reviews.select("SUM(ratelogo) AS ratelogo_sum, SUM(ratepitch) AS ratepitch_sum, SUM(ratevideo) AS ratevideo_sum, SUM(rateidea) AS rateidea_sum, SUM(ratename) AS ratename_sum, SUM(score) AS score_sum, Count(*) AS reviews_count").group(:pivot_id).map do |t|
+         average_pivot_reviews.merge!(:logo => (t.ratelogo_sum/t.reviews_count))
+         average_pivot_reviews.merge!(:pitch => t.ratepitch_sum/t.reviews_count)
+         average_pivot_reviews.merge!(:idea => t.rateidea_sum/t.reviews_count)
+         average_pivot_reviews.merge!(:video => t.ratevideo_sum/t.reviews_count)
+         average_pivot_reviews.merge!(:name => t.ratename_sum/t.reviews_count)
+       end
+     end
+   #Funcion que recoleta el review del usuario para el pivot de la startup
+   current_review_by_user = {:logo => @review['ratelogo'],:pitch => @review['ratepitch'],:idea => @review['rateidea'],:video => @review['ratevideo'],:name => @review['ratename']}
+  %>
+
+  <%
+     bar_chart current_review_by_user, average_pivot_reviews
+  %>
+</div>

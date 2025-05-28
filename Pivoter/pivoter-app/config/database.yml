@@ -1,0 +1,38 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+#  adapter: postgresql
+#  host: ec2-54-197-241-94.compute-1.amazonaws.com
+#  username: cruukrpnxdknvw
+#  database: deuvb69pt5mm8u
+#  password: ngxDLWg_T2OAxtgflOrrCZaXBT
+#  port: 5432
+  adapter: postgresql
+  host: localhost
+  username: postgres
+  database: pivoter-app
+  password: secreto
+  port: 5432
+
+production:
+#  adapter: postgresql
+#  host: ec2-54-197-241-94.compute-1.amazonaws.com
+#  username: cruukrpnxdknvw
+#  database: deuvb69pt5mm8u
+#  password: ngxDLWg_T2OAxtgflOrrCZaXBT
+#  port: 5432
+  adapter: postgresql
+  host: localhost
+  username: postgres
+  database: pivoter-app
+  password: secreto
+  port: 5432

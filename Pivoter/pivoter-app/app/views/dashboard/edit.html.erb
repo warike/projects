@@ -1,0 +1,9 @@
+<div class="container">
+	<%- model_class = Startup -%>
+		<br>
+	<h1 class="text-center">
+		<%=t '.title', :default => [:'helpers.titles.edit', 'Edit a %{model}'], :model => model_class.model_name.human.titleize %>
+	</h1>
+	<hr>
+	<%= render :partial => 'form_startup' %>
+</div>

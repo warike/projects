@@ -1,0 +1,51 @@
+<div id="tracking" class="row">
+  <h1>Tracking</h1>
+
+  <div class="col-md-4">
+    <%= high_chart("visits_div_chart", @chart[:visits]) %>
+  </div>
+  <div class="col-md-4">
+    	<%=high_chart("reviews_div_chart", @chart[:reviews])%>
+  </div>
+  <div class="col-md-4">
+    <%= high_chart("countries_div_chart", @chart[:countries]) do |c| %>
+	    <%= raw "options.tooltip.formatter = function() {return '<b>'+ this.point.name +'</b>: '+ this.y;}"  %>
+	    <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
+    <% end %>
+  </div>
+
+  <div class="col-md-12">
+    <%= link_to '<span class="glyphicon glyphicon-globe"></span> Pivot Now!'.html_safe,"#", :class => 'btn btn-primary', :data => {:toggle =>'modal', :target =>'#modal_pivot'}  %>
+    <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Click to Pivot your Startup"></span>
+    <%= render "pivots/form" %>
+    <div class="table-responsive top30">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Startup</th>
+          <th>Start - End </th>
+          <th class="text-center">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% if @pivots.blank? %>
+            <tr class="active">
+              <td class="text-center text-info" colspan="4"> <i><b><%= @startup.name %></b> does not have any pivots right now!</i></td>
+            </tr>
+        <% else %>
+            <% @pivots.order(status: :desc).each do |p| %>
+                <tr class="<%= (p.is_active?)?"success":""  %>" >
+
+                  <td><a href="#"><span class="glyphicon glyphicon-search"></span></a></td>
+                  <td><%= Startup.find(p.startup_id).name  %></td>
+                  <td><%= p.start_date  %> - <%= p.finish_date  %></td>
+                  <td class="text-center"><%= (p.is_active?)? "<span class='glyphicon glyphicon-ok'></span> ".html_safe+" " :"Inactive"  %></td>
+                </tr>
+            <% end %>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

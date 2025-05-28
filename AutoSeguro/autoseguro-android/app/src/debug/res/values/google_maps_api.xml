@@ -1,0 +1,10 @@
+<resources>
+    <!--
+    TODO: Reemplazar por el API Key de Release antes de subir a google play.
+    To get one, follow this link, follow the directions and press "Create" at the end:
+    https://console.developers.google.com/flows/enableapi
+    -->
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+        "API_KEY"
+    </string>
+</resources>

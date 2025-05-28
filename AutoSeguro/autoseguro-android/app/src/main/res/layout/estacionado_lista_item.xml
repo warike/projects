@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:id="@+id/item_vehiculo"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/txtPatente"
+        android:layout_weight="50"
+        android:gravity="center_vertical"
+        android:text="Patente"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
+
+    <ImageView
+        android:layout_width="65dp"
+        android:layout_height="30dp"
+        android:id="@+id/btn_switch"
+        android:src="@drawable/off"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+</LinearLayout>

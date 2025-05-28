@@ -1,0 +1,184 @@
+<div class="container" style="margin-top:10px;">
+    <header class="row">
+        <div class="col-md-2 top15">
+            <img class="imgBorder img-responsive" src="<%= @startup.logo %>">
+        </div>
+        <div class="col-md-8 top30">
+            <div class="row">
+                <div class="col-sm-9 text-center col-xs-offset-1">
+                    <h1><strong><%= @startup.name %></strong></h1>
+                    <div class="row col-xs-offset-1">
+                        <div class="col-xs-4 col-sm-6 ">
+                            <h3>
+								<% show_country @startup.country_name%>
+							</h3>
+                        </div>
+                        <div class="col-xs-4 col-sm-4">
+                            <h3>
+                            	<% show_category @startup.category %>
+                        	</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 top30">
+            <div id="discover_startup" class="header-startup pull-right top30">
+                <h2>
+                    <% show_next_button %>
+                </h2>
+
+            </div>
+        </div>
+    </header>
+    <div class="row-fluid top15">
+        <div class="row-fluid">
+            <ul id="menu_startup" class="nav nav-pills">
+                <li class="active"><a href="#overview" data-toggle="tab">Overview</a>
+                </li>
+                <li><a href="#profile" data-toggle="tab"><span class="badge"><%= @startup.pivots_count %></span> Pivots</a>
+                </li>
+                <li><a href="#messages" data-toggle="tab">Media</a>
+                </li>
+                <li><a href="#settings" data-toggle="tab">Commentaries</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="tab-content">
+                <div class="tab-pane active" id="overview">
+                    <div class="row-fluid">
+                        <center>
+                          <% if(@startup.has_video?)%>
+                              <video width="700px" height="400px" id="video_pitch" preload="none">
+                                <source type="video/youtube" src="<%= @startup.videopitch%>" />
+                              </video>
+                          <% else %>
+                              <img src="http://venturebeat.files.wordpress.com/2014/11/screen-shot-2014-11-06-at-7-06-23-pm.png?w=780&h=9999&crop=0" width="700px" height="400px" id="video_pitch">
+                          <% end%>
+
+                          <br><br>
+                          <div class="col-md-12 color1 well">
+                          	<h2 align="text-center">Pitch</h2>
+                            <p class="text-justify">
+                            	<strong>
+                                	<%= @startup.pitch %>
+                                </strong>
+                            </p>
+                          </div>
+                          <br><br>
+                          <div class="">
+
+                            <div class="col-md-12 color1 well top15">
+                              <h2>Members</h2>
+                              <div class="row">
+                                <% @startup.members.order(role: :desc).each do |member| %>
+                                      <div class="col-xs-6">
+                                        <div class="col-xs-3">
+                                          <%= image_tag(member.user.gravatar_url(:size=>50, :default =>'mm'), :class => 'img-thumbnail imgBorder',:style => 'width:50px;height:50px;')%>
+                                        </div>
+                                        <div class="col-xs-9 text-left">
+                                          <p>
+                                            <%= member.user.email %>
+                                          </p>
+                                          <p>
+                                            <%= member.role %>
+                                          </p>
+
+                                        </div>
+                                      </div>
+                                <%end%>
+                              </div>
+                            </div>
+                          </div>
+                        </center>
+
+
+                    </div>    
+                </div>
+                <div class="tab-pane" id="profile">
+
+                </div>
+                <div class="tab-pane" id="messages">
+
+                </div>
+                <div class="tab-pane" id="settings">
+
+                </div>
+            </div>
+        </div>
+		<div class="col-md-4">
+          <div class="color1 well">
+            <h2>Social</h2>
+            <div class="row">
+
+              <div class="col-md-12">
+                <a class="btn btn-block btn-social-padding btn-primary" href="javascript:void(0)">
+                  <i class="fa fa-eye"></i>
+                  <% if(user_signed_in?) %>
+                    <%= (current_user.following?@startup) ? 'Following' : 'Follow'%>
+                  <%end%>
+                  <%= @startup.name %>
+
+                </a>
+              </div>
+              <br><br>
+
+              <div class="col-md-6">
+                <a class="btn btn-block btn-social btn-linkedin btn-social-padding" href="">
+                  <i class="fa fa-facebook"></i> <%= @startup.name %>
+                </a>
+              </div>
+
+              <div class="col-md-6">
+                <a class="btn btn-block btn-social btn-twitter btn-social-padding btn-success" href="">
+                  <i class="fa fa-twitter"></i> <%= @startup.name %>
+                </a>
+              </div>
+            </div>
+          </div>
+        	<% startup_review_form @startup, current_user %>
+
+
+	        <div class="color1 well">
+	            <h2>Activity</h2>
+	            <div class="row-fluid">
+	            		<p class="text-justify">
+	            			<span class="glyphicon glyphicon-plus"> </span> <%= @startup.name %> was created at <%= @startup.created_at %>
+	            		</p>
+	            		<p class="text-justify">
+	            			<span class="glyphicon glyphicon-pencil"> </span> <%= @startup.name %> edited its Pitch
+	            		</p>
+	            		<p class="text-justify">
+	            			<span class="glyphicon glyphicon-pencil"> </span> <%= @startup.name %> edited its Media
+	            		</p>  
+	            		<hr>
+	            			<a href="#">More ...</a> 
+	            		    
+	            </div>
+	        </div>
+
+        </div>
+    </div>
+</div>
+<script src="http://mediaelementjs.com/js/mejs-2.16.2/mediaelement-and-player.min.js"></script>
+<script>
+    jQuery(document).ready(function($) {
+        $('#video_pitch').mediaelementplayer();
+    });
+</script>
+<link href="http://mediaelementjs.com/js/mejs-2.16.2/mediaelementplayer.min.css" rel="Stylesheet">
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53d59443440142dc"></script>
+<script>
+    $(function(d, s, id) {
+      	var js, fjs = d.getElementsByTagName(s)[0];
+      	if (d.getElementById(id)) return;
+      	js = d.createElement(s); js.id = id;
+      	js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
+      	fjs.parentNode.insertBefore(js, fjs);
+    }(	document, 'script', 'facebook-jssdk'));
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+</script>

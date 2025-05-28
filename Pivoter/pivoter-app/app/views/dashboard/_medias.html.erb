@@ -1,0 +1,51 @@
+
+<div class="row">
+  <div class="col-md-10">
+     <h1>Media</h1>  
+     <%= render "/medias/form" %>     
+  </div>
+  <div class="col-md-2 top15">
+       <select>
+          <option value="#">Filter Type</option>
+     </select>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Content</th>
+      <th>Url</th>
+      <th>Media Type</th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @medias.blank? %>
+      <tr class="active">
+        <td class="text-center text-info" colspan="4"> <i><b><%= @startup.name %></b> does not have any media right now!</i></td>
+      </tr>
+    <% else %>
+      <% @medias.each do |media| %>
+        <tr>
+          <td><%= link_to media.id%></td>
+          <td><%= media.content%></td>
+          <td><%= media.url%></td>
+          <td><%= media.media_type%></td>
+          <td>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        "#", :class => 'btn btn-default btn-xs' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                        "#",
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                        :class => 'btn btn-xs btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to '<span class="glyphicon glyphicon-plus-sign"></span> Add New Media'.html_safe , new_startup_path, :class => 'btn btn-primary' %>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIServingView" customModule="scoodit" customModuleProvider="target">
+            <connections>
+                <outlet property="addServingButton" destination="uNh-LS-lte" id="eTh-7S-2rs"/>
+                <outlet property="servingNumber" destination="wBB-S4-yn7" id="6kK-Ms-ezs"/>
+                <outlet property="shoppingButton" destination="KZY-ip-6AY" id="8Me-kI-7N0"/>
+                <outlet property="whatsappButton" destination="hO1-k6-p8U" id="Nzy-Gc-TcI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="evh-Xy-RMS">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serving : 4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBB-S4-yn7">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="109" id="e5B-um-TAi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNh-LS-lte">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="nm2-mk-fnK"/>
+                    </constraints>
+                    <state key="normal" image="add_ingredient_icon"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZY-ip-6AY">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="361-e2-HuK"/>
+                        <constraint firstAttribute="width" constant="25" id="uX3-fS-jDt"/>
+                    </constraints>
+                    <state key="normal" image="shopping_0"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hO1-k6-p8U">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="FkQ-1m-T8G"/>
+                        <constraint firstAttribute="height" constant="25" id="n0v-jc-EJB"/>
+                    </constraints>
+                    <state key="normal" image="whatsapp_0"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hO1-k6-p8U" firstAttribute="leading" secondItem="evh-Xy-RMS" secondAttribute="leading" constant="16" id="4YR-mf-1IM"/>
+                <constraint firstAttribute="trailing" secondItem="uNh-LS-lte" secondAttribute="trailing" constant="16" id="7zn-BQ-b7C"/>
+                <constraint firstAttribute="bottom" secondItem="KZY-ip-6AY" secondAttribute="bottom" constant="12" id="AtP-3E-FKr"/>
+                <constraint firstAttribute="bottom" secondItem="uNh-LS-lte" secondAttribute="bottom" constant="12" id="E6z-Pl-0I4"/>
+                <constraint firstAttribute="bottom" secondItem="hO1-k6-p8U" secondAttribute="bottom" constant="12" id="Lsz-pT-BWn"/>
+                <constraint firstItem="KZY-ip-6AY" firstAttribute="top" secondItem="evh-Xy-RMS" secondAttribute="top" constant="13" id="NWV-y4-HxT"/>
+                <constraint firstAttribute="bottom" secondItem="wBB-S4-yn7" secondAttribute="bottom" constant="12" id="NqB-y9-1YY"/>
+                <constraint firstItem="KZY-ip-6AY" firstAttribute="leading" secondItem="hO1-k6-p8U" secondAttribute="trailing" constant="33" id="OMa-vX-IYr"/>
+                <constraint firstItem="uNh-LS-lte" firstAttribute="leading" secondItem="wBB-S4-yn7" secondAttribute="trailing" constant="8" id="dNZ-pE-h44"/>
+                <constraint firstItem="uNh-LS-lte" firstAttribute="top" secondItem="evh-Xy-RMS" secondAttribute="top" constant="13" id="eZc-me-TIm"/>
+                <constraint firstItem="wBB-S4-yn7" firstAttribute="top" secondItem="evh-Xy-RMS" secondAttribute="top" constant="13" id="iQp-tC-ue5"/>
+                <constraint firstItem="hO1-k6-p8U" firstAttribute="top" secondItem="evh-Xy-RMS" secondAttribute="top" constant="13" id="ijD-et-KXx"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="282" y="490"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add_ingredient_icon" width="60" height="60"/>
+        <image name="shopping_0" width="60" height="60"/>
+        <image name="whatsapp_0" width="60" height="60"/>
+    </resources>
+</document>

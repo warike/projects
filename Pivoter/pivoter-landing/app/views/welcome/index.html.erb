@@ -1,0 +1,86 @@
+
+
+<section id="features" class="first-section">
+
+  <div class="container">
+    <div class="row">
+      <section>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6">
+            <div class="feature-icon text-center">
+              <img src="images/icons/validation.svg" alt="" class="opacity" style="height: 380px;
+                      width: 380px;" />
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 padding-5">
+            <h1 class=" text-center"><%= t('cloud_title')%></h1>
+            <p class="lead justifty"><%= t('cloud_description')%></p>
+            <div class="alert alert-success hidden" role="alert" id="alert_suscribe">
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              <i class="fa fa-check"></i> <%= t('alert').to_s.html_safe %>
+
+            </div>
+            <%= form_for @visit, :remote => true, data: {type: :json } , html: { role: :form, 'data-model' => 'visit', :id => 'newsletter-signup' } do |f| %>
+                <div class="form-group">
+                  <div class="input-group">
+                    <%= f.text_field :email, :placeholder => t('email_placeholder'), :class => 'form-control input-hg'%>
+                    <%= f.hidden_field :referralID, :value=> params[:ref] %>
+                    <span class="input-group-btn">
+                                <button class="btn btn-inverse btn-hg" type="submit" name="submit">
+                                  <span class="fui-mail"></span></button>
+                              </span>
+                  </div><!-- /input-group -->
+
+                </div>
+                <button type="submit" class="btn btn-info input-lg  col-xs-12">
+                  <%=t('email_button')%></button>
+            <% end %>
+
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 pull-right">
+            <div class="feature-icon text-center">
+              <img src="images/icons/social108.svg" alt="" class="opacity" />
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 padding-5" >
+            <h1 class=""><%= t('networking')%></h1>
+            <p class="lead justifty">
+              <%= t('networking_description')%>
+
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6">
+            <div class="feature-icon text-center">
+              <img src="images/icons/business9.svg" alt="" class="opacity" />
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 padding-5">
+            <h1 class=" "><%= t('tracktion_title')%></h1>
+            <p class="lead justifty"><%= t('tracktion_description') %></p>
+          </div>
+        </div>
+
+        <button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-info input-lg col-xs-6 col-lg-offset-3"><%=t('email_button')%></button>
+      </section>
+
+
+
+    </div><!-- /row -->
+  </div><!-- /container -->
+
+</section>
+
+<!--/////////////////////////////////////// end FEATURES SECTION ////////////////////////////////////////-->
+
+

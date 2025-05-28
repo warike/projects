@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.samtech.autoseguro24siete.VelMaxActivity">
+    <!--<item android:id="@+id/action_buscar" android:title="@string/action_buscar"
+        android:orderInCategory="90" app:showAsAction="always"
+        android:icon="@drawable/lupa_buscador" app:actionViewClass="android.widget.SearchView"/>-->
+    <item android:id="@+id/action_guardar" android:title="@string/action_guardar"
+        android:orderInCategory="100" app:showAsAction="always" />
+</menu>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+<!-- Basic Page Needs
+	================================================== -->
+<head>
+
+    <title>
+        Pivoter - Where Startups Pivot Get Knowledge
+    </title>
+    <meta charset="utf-8">
+    <meta name="description" content="Pivoter is cloud-based service for entrepreneurs">
+    <meta name="author" content="Pivoter">
+    <!-- Mobile Specific Metas
+	================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- FONTS
+	================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400' rel='stylesheet' type='text/css'>
+    
+    <%=javascript_include_tag 'application'%>
+    <%=csrf_meta_tags %>
+    <%=favicon_link_tag 'favicon.ico' %>
+</head>
+
+<!-- CSS
+	================================================== -->
+	<!-- Bootstrap  -->
+	<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<!-- web font  -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400' rel='stylesheet' type='text/css'>
+	<!-- Pop up-->
+	<link rel="stylesheet" type="text/css" href="js-plugin/magnific-popup/magnific-popup.css" />
+	<!-- Revolution Slider -->
+	<link rel="stylesheet" type="text/css" href="js-plugin/revolution-slider/rs-plugin/css/navstylechange.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="js-plugin/revolution-slider/rs-plugin/css/settings-hideo.css" media="screen" />
+	<!-- Owl carousel-->
+	<link rel="stylesheet" href="js-plugin/owl.carousel/owl-carousel/owl.carousel.css">
+	<link rel="stylesheet" href="js-plugin/owl.carousel/owl-carousel/owl.theme.css">
+	<!-- nekoAnim-->
+	<link rel="stylesheet" type="text/css" href="js-plugin/appear/nekoAnim.css" />
+	<!-- isotope -->
+	<link type="text/css" rel="stylesheet" href="js-plugin/isotope/css/style.css">
+	<!-- icon fonts -->
+	<link type="text/css" rel="stylesheet" href="font-icons/custom-icons/css/custom-icons.css">
+	<link type="text/css" rel="stylesheet" href="font-icons/custom-icons/css/custom-icons-ie7.css">
+
+	<!-- Custom css -->
+	<link type="text/css" rel="stylesheet" href="css/layout.css">
+	<link type="text/css" id="colors" rel="stylesheet" href="css/colors.css">
+	<link type="text/css" rel="stylesheet" href="css/custom.css">
+	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+	<script src="js/modernizr-2.6.1.min.js"></script>
+<!-- Favicons
+	================================================== -->
+	<%=favicon_link_tag 'favicon.ico' %>
+</head>
+<body class="activateAppearAnimation">
+<!-- Primary Page Layout 
+	================================================== -->
+	<!-- globalWrapper -->
+	<div id="globalWrapper">
+		<header class="navbar-fixed-top">
+			<!-- header -->
+ 			<div id="mainHeader" role="banner" class="">
+                <div class="container">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+                            <!-- responsive navigation -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- Logo -->
+                            <a class="navbar-brand" href="<%= root_path %>">
+                              <%= image_tag( "main_logo_pivoter.png", :alt=>"Main LOGO", :style => 'width:60%; height:100%') %>
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="mainMenu">
+                            <!-- Main navigation -->
+                            <ul class="nav navbar-nav">
+                                <li class="primary">
+                                    <a href="<%= root_path %>" class="firstLevel hasSubMenu"><span class="glyphicon glyphicon-home"></span> Home</a>
+                                </li>
+                                <% if user_signed_in? %>
+                                    <li class="primary">
+                                        <!--<a href="#" class="dropdown-toggle firstLevel hasSubMenu" data-toggle="dropdown"><span class="glyphicon glyphicon-send"></span> Dashboard</a>-->
+                                          <a href="<%= dashboard_path %>" class="firstLevel hasSubMenu" >
+                                            <span class="glyphicon glyphicon-send"></span> Dashboard
+                                          </a>
+                                    </li>
+                                <%end%>
+								    <!--<ul class="dropdown-menu" role="menu">-->
+                                      <!--<li>-->
+                                        <!--<a href="<%= new_startup_path %>">-->
+                                          <!--Publish IDEA-->
+                                          <!--<span class="glyphicon glyphicon-plus pull-right"></span>-->
+                                        <!--</a>-->
+                                      <!--</li>-->
+								        <!--<% if user_signed_in? %>-->
+
+									        <!--<li class="divider"></li>-->
+									        <!--<li>-->
+									        	<!--<a href="<%= dashboard_path%>">-->
+									        		<!--Dashboard-->
+									        		<!--<span class="glyphicon glyphicon-list-alt pull-right"></span>-->
+								        		<!--</a>-->
+									        <!--</li>-->
+								        <!--<%end%>-->
+								    <!--</ul>-->
+								<li>
+									<a href="<%= startups_published_path %>">
+										<span class="glyphicon glyphicon-globe"></span>
+										Discover
+									</a>
+					        	</li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                              <li class="primary">
+                                <a href="<%= new_startup_path %>" class="firstLevel hasSubMenu" >
+                                  <span class="glyphicon glyphicon-plus"></span> Publish IDEA
+                                </a>
+                              </li>
+                            	<li class="dropdown">
+                                  <a href="#" class="dropdown-toggle firstLevel hasSubMenu" data-toggle="dropdown">
+                                    <%=
+                                        (user_signed_in?) ? (image_tag current_user.gravatar_url(:size=>24, :default =>'mm'), :class=>'imgBorder') : "<span class='glyphicon glyphicon-cog'></span>".html_safe
+                                    %>
+                                  </a>
+								    <ul class="dropdown-menu" role="menu">
+                                      <% if user_signed_in? %>
+                                          <li><%= link_to current_user.email, edit_user_registration_path, :class => 'navbar-link' %></li>
+                                          <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+                                          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+                                      <% else %>
+                                          <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
+                                          </li>
+                                          <li> <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></li>
+                                      <% end %>
+								    </ul>
+								</li>
+                            	
+                        	</ul>
+                            <!-- End main navigation -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+		<!-- header -->
+
+		<!-- ======================================= content ======================================= -->
+		<!-- slider -->
+		<section id="rsDemoWrapper">
+			<div class="tp-banner-container">
+				<div class="tp-banner" >
+					<ul>	<!-- SLIDE  -->
+						<li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500" >
+							<!-- MAIN IMAGE -->
+							<img src="assets/slides-01.jpg"  alt="slides-01"  data-bgfit="cover" data-bgposition="left center" data-bgrepeat="no-repeat">
+							<!-- LAYERS -->
+						</li>
+						<!-- SLIDE  -->
+						<li data-transition="slidedown" data-slotamount="7" data-masterspeed="1000" >
+							<!-- MAIN IMAGE -->
+							<img src="assets/slides-02.jpg"  alt="slides-02"  data-bgfit="cover" data-bgposition="left center" data-bgrepeat="no-repeat">
+							<!-- LAYERS -->
+						</li>
+							<!-- SLIDE  -->
+						<li data-transition="slidedown" data-slotamount="7" data-masterspeed="1000" >
+							<!-- MAIN IMAGE -->
+							<img src="assets/slides-03.jpg" style='background-color:#b2c4cc' alt="slides-03"  data-bgfit="cover" data-bgposition="left center" data-bgrepeat="no-repeat">
+							<!-- LAYERS -->
+						</li>
+					</ul>
+				</div>
+		</section>
+		</br>
+		<section id="content">
+	<section class="largeQuote pb15 pt15">
+		<div class="container">
+			<div class="row">
+				<div class="span12 text-center">
+					<h1>How it Works</h1>
+					<p>“Encourage and improve every idea”</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- services -->
+	<section id="services">
+		<div class="container">
+			<div class="row" align="center">
+				<div class="col-md-4 col-sm-6">
+					<article class="boxIcon" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
+						<a href="#">
+							<img src="assets/pasos-01.png"  class="icon-heart iconBig">
+							<h2>1. Publish your Startup</h2>
+						</a>
+					</article>
+				</div>
+
+				<div class="col-md-4 col-sm-6">
+					<article class="boxIcon" data-nekoanim="fadeIn" data-nekodelay="200">
+						<a href="#">
+							<img src="assets/pasos-02.png"  class="icon-heart iconBig">
+							<h2>2. Pivot through Community</h2>
+						</a>
+					</article>
+				</div>
+
+				<div class="col-md-4 col-sm-6">
+					<article class="boxIcon" data-nekoanim="fadeInRightBig" data-nekodelay="300">
+						<a href="#">
+							<img src="assets/pasos-03.png"  class="icon-heart iconBig">
+							<h2>3. Learn and Improve</h2>
+						</a>
+					</article>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 mb30">
+					<hr class="lineLines">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="paralaxSlice1" data-stellar-background-ratio="0.5">
+		<div class="maskParent">
+			<div class="paralaxMask"></div>
+			<div class="paralaxText container">
+				<h2>Seriousness to your startups  
+					<br/>blast your inspiration.<br/><small>Pivoter Team</small>
+				</h2>
+			</div>
+		</div>
+	</section>
+
+	<section class="tabsDetails pt40"  data-nekoanim="fadeInUp" data-nekodelay="100" >
+			<div class="container">
+				<div class="row">
+					<div class="span12 text-center mb40">
+						<h1>Why choose Pivoter?</h1>
+                        <blockquote class="col-md-offset-3"> Enhance your collective commitment in a cooperative way.</blockquote>
+					</div>
+				</div>
+				<!-- tabs -->
+				<div class="row">
+
+					<!-- Navigation Buttons -->
+					<div class="col-md-3">
+						<ul class="nav nav-pills nav-stacked">
+							<li class="active">
+								<a href="#responsive" data-toggle="tab"><i class="icon-star"></i>Pivoter Services</a>
+							</li>
+							<li>
+								<a href="#profile" data-toggle="tab"><i class="icon-star"></i>Pivoter Reporting & Dashboard</a>
+							</li>
+							<li>
+								<a href="#messages" data-toggle="tab"><i class="icon-star"></i>Pivoter Plans</a>
+							</li>
+						</ul>
+					</div>
+					<!-- Navigation Buttons -->
+
+					<!-- Content -->
+					<div class="col-md-9">
+						<div class="tab-content">
+
+							<div class="tab-pane fade in active" id="responsive">
+								<div class="row">
+									<div class="col-md-6">
+
+										<img src="images/theme-pics/home-carousel-b-1.png" alt="FAT CATZ premium website template" class="img-responsive"/>
+									</div>
+
+									<div class="col-md-6">
+
+										<h2>Easy Management of StartUp</h2>
+										<p>
+                                          Pivoter is an cloud-based platform that enables StartUps and Entrepreneurs to measuring their project’s potential and collaboratively contribute to their improvement.
+                                          Once an project’s features are highlighted through the platform, Pivoter creates the gateway to let different capitalist and entities gather around that project and provide what’s missing.
+										</p>
+										<h3>Increase your Value Proposition</h3>
+										<p>
+											All layouts are made of sections, that you can easily combine to fit your specific project.
+										</p>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="tab-pane fade" id="profile">
+								<div class="row">
+									<div class="col-md-6">
+
+										<img src="images/theme-pics/home-carousel-b-2.png" alt="FAT CATZ premium website template" class="img-responsive"/>
+									</div>
+
+									<div class="col-md-6">
+										<h2>Bootstrap 3 & Neko CSS Framework</h2>
+										<p>
+											Based on Twitter Bootstrap 3, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.
+										</p>
+										<a href="http://getbootstrap.com/" target="_blank" class="btn btn-primary">Read more about Bootstrap</a>
+										<p class="mt30">
+											Along with all the Bootstraps components, we added some extra shortcodes to help you customize your website, easily insert carousel, or call to actions boxes and many more.
+										</p>
+										<a href="features-neko-shortcodes.html" target="_blank" class="btn btn-primary">Check demo here</a>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="tab-pane fade" id="messages">
+								<div class="row">
+									<div class="col-md-6">
+
+										<img src="images/theme-pics/home-carousel-3.png" alt="FAT CATZ premium website template" class="img-responsive"/>
+									</div>
+
+									<div class="col-md-6">
+										<h2>Free - Account</h2>
+										<p>
+											Define free plan for pivoter asda ad sad asd ad asdasdasdas
+										</p>
+										<a href="features-icons.html" target="_blank" class="btn btn-primary">Sign Up</a>
+										<h2>Try Premium Account</h2>
+										<p>
+											Define free plan for pivoter asda ad sad asd ad asdasdasdas
+										</p>
+										<a href="features-icons.html" target="_blank" class="btn btn-primary">Try Premium</a>
+
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- tabs -->
+		</section>
+	<section id="team" class="pt40 pb40">
+
+				<div class="container">
+					<div class="row"> 
+						<div class="col-md-12 mb30 text-center">
+							<h1>Meet our team</h1>
+							<p class="subTitle">
+								Here a little ref of our team...
+							</p>
+
+
+						</div>
+						<section class="col-md-12">
+							<div class="row mb15">
+
+								<div class="col-sm-3 col-sm-offset-2" data-nekoanim="fadeIn" data-nekodelay="100">
+									<article>
+										<div><img src="https://secure.gravatar.com/avatar/e8f5d8bc0c4a1f52907df556df141b6a.png?d=mm&r=PG&s=263" alt="" class="img-responsive imgBorder"></div>
+										<div class="boxContent text-center">
+											<h3>Maria Cecilia Gomez Leiva</h3>
+											<p>Team Leader - Hustler</p>
+										</div>
+									</article>
+								</div>
+
+								<div class="col-sm-3" data-nekoanim="fadeIn" data-nekodelay="200">
+									<article>
+										<div><img src="https://secure.gravatar.com/avatar/e8f5d8bc0c4a1f52907df556df141b6a.png?d=mm&r=PG&s=263" alt="" class="img-responsive imgBorder"></div>
+										<div class="boxContent text-center">
+											<h3>Gonzalo Godoy Moya</h3>
+											<p>Hacker</p>
+										</div>
+									</article>
+								</div>
+
+								<div class="col-sm-3" data-nekoanim="fadeIn" data-nekodelay="300">
+									<article>
+										<div><img src="https://secure.gravatar.com/avatar/e8f5d8bc0c4a1f52907df556df141b6a.png?d=mm&r=PG&s=263" alt="" class="img-responsive imgBorder"></div>
+										<div class="boxContent text-center">
+											<h3>Cristian Olavarria Menard</h3>
+											<p>Business Development Manager</p>
+										</div>
+									</article>
+								</div>
+
+
+							</div>
+
+						</section>
+
+
+					</div>
+				</div>
+
+			</section>
+
+	<!-- end content -->
+
+	<!-- footer -->
+      <!-- footer -->
+        <footer id="footerWrapper">
+            <section id="mainFooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="footerWidget">
+                              <%= image_tag( "main_logo_pivoter.png", :id=>"footerLogo")%>
+                            </div>
+                        </div>
+
+	                  <div class="col-sm-8">
+                          <div class="footerWidget">
+                              <h3><strong> Location</strong></h3>
+                              <address>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <p>
+                                      <i class="icon-location"></i>
+                                      Socrates #413<br>
+                                      <span class="glyphicon glyphicon-tower"></span> Santiago, Metropolitan Region - Chile <br>
+                                    </p>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <p>
+                                      <i class="icon-phone"></i> +569 85566689 <br>
+                                      <i class="icon-mail-alt"></i> <a href="mailto:contacto@pivoter.cl">contacto@pivoter.cl</a>
+                                    </p>
+                                  </div>
+                                </div>
+
+                            </address>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-3 col-xs-6">
+                            <%= image_tag( "clients/logo3.png", :class=>"img-responsive imgBorder clientLogo") %>
+                        </div>
+
+                        <div class="col-md-3 col-xs-6">
+                            <%= image_tag( "clients/logo4.png", :class=>"img-responsive imgBorder clientLogo") %>
+                        </div>
+
+                        <div class="col-md-3 col-xs-6">
+                            <%= image_tag( "clients/logo2.png", :class=>"img-responsive imgBorder clientLogo") %>
+                        </div>
+
+                        <div class="col-md-3 col-xs-6">
+                            <%= image_tag( "clients/logo5.png", :class=>"img-responsive imgBorder clientLogo") %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="footerRights">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="pull-right">Copyright ©
+                                <%= Time.now.year %> <a href="http://www.pivoter.me/home" target="blank">Pivoter</a> / All rights reserved.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </footer>
+	<!-- End footer -->
+</div>
+<!-- global wrapper -->
+<!-- End Document 
+	================================================== -->
+	<script type="text/javascript" src="js-plugin/respond/respond.min.js"></script>
+	<script type="text/javascript" src="js-plugin/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js-plugin/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
+
+	<!-- third party plugins  -->
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="js-plugin/easing/jquery.easing.1.3.js"></script>
+
+	<!-- carousel -->
+	<script type="text/javascript" src="js-plugin/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
+
+	<!-- pop up -->
+	<script type="text/javascript" src="js-plugin/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+	<!-- Revolution slider -->
+	<script type="text/javascript" src="js-plugin/revolution-slider/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+	<script type="text/javascript" src="js-plugin/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+	<!-- isotope -->
+	<script type="text/javascript" src="js-plugin/isotope/jquery.isotope.min.js"></script>
+	<script type="text/javascript" src="js-plugin/isotope/jquery.isotope.sloppy-masonry.min.js"></script>
+
+	<!-- form -->
+	<script type="text/javascript" src="js-plugin/neko-contact-ajax-plugin/js/jquery.form.js"></script>
+	<script type="text/javascript" src="js-plugin/neko-contact-ajax-plugin/js/jquery.validate.min.js"></script>
+	
+	<!-- Paralax -->
+	<script type="text/javascript" src="js-plugin/parallax/js/jquery.stellar.min.js"></script>
+	
+	<!-- appear -->
+	<script type="text/javascript" src="js-plugin/appear/jquery.appear.js"></script>
+
+	<!-- Custom  -->
+	<script type="text/javascript" src="js/custom.js"></script>
+</body>
+</html>

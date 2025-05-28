@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @visit.email %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @visit.ip %>
+</p>
+
+<p>
+  <strong>Startup:</strong>
+  <%= @visit.startup_id %>
+</p>
+
+<%= link_to 'Edit', edit_visit_path(@visit) %> |
+<%= link_to 'Back', visits_path %>

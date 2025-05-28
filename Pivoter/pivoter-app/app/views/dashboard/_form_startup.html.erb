@@ -1,0 +1,76 @@
+<%= form_for @startup, :url => {:controller => 'dashboard', :action => 'update'}, method: :post, :html => { :class => 'form-vertical' }, :validate => true do |f| %>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <%= f.label :name, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :name, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :webpage, :class => 'control-label' %>
+        <div class="controls">
+          <div class="input-group">
+            <%= content_tag(:span, 'http://', :class => 'input-group-addon')%>
+            <%= f.text_field :webpage, :placeholder => "www.example.com",:class => 'form-control' %>
+          </div>  
+        </div>
+      </div>
+      <div class="form-group">
+          <%= f.label :logo, :class => 'control-label' %>
+          <div class="controls">
+            <%= f.text_field :logo, :class => 'form-control' %>
+          </div>
+      </div>
+        <div class="form-group">
+          <%= f.label :videopitch, :class => 'control-label' %>
+          <div class="controls">
+            <%= f.text_field :videopitch, :placeholder => "http://www.youtube.com/embed/yYAb2RaSkQk",:class => 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :achievements, :class => 'control-label' %>
+          <div class="controls">
+            <%= f.text_field :achievements, :class => 'form-control' %>
+          </div>
+        </div>
+        
+               
+    </div>
+    <div class="col-xs-6">
+
+        <div class="form-group">
+          <%= f.label :country, :class => 'control-label' %>
+          <div class="controls">
+            <%= f.select(:country,options_for_select(@startup.countries, @startup.country),{}, :class => 'form-control select2')%>
+          </div>
+        </div> 
+
+        <div class="form-group">
+          <%= f.label :category, :class => 'control-label' %>
+          <div class="controls">
+            <%= f.select(:category, options_for_select(@startup.categories, @startup.category), {} ,{ :class => 'form-control select2'})%>
+          </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :stage, :class => 'control-label' %>
+          <div class="controls">
+              <%= f.select(:stage, options_for_select(@startup.stages, @startup.stage), {} ,{ :class => 'form-control select2'})%>
+          </div>
+            
+        </div> 
+      <div class="form-group">
+        <%= f.label :description, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_area :description, :class => 'form-control', :rows => '6' %>
+        </div>
+      </div>       
+    </div>
+ 
+  </div>
+	<div class="actions">
+		<%= f.submit "Update", :class => 'btn btn-success' %>
+		<%= link_to t('.cancel', :default => t("helpers.links.cancel")),dashboard_startup_path, :class => 'btn btn-default' %>
+	</div>
+  
+<% end %>  

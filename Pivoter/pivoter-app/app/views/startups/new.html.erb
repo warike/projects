@@ -1,0 +1,9 @@
+
+
+  <div class="row-fluid">
+    <%- model_class = Startup -%>
+  </div>
+<h1 class="text-center">
+	<%=t '.title', :default => [:'helpers.titles.new', 'Create a %{model}'], :model => model_class.model_name.human.titleize %>
+</h1>
+<%= render :partial => 'form' %>

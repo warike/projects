@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
+    tools:context="com.samtech.gpsalert.NotificacionesActivity">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Active las notificaciones para mostrar alertas de cada opción cuando Modo Estacionado este activado."
+        android:id="@+id/txtInform"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" />
+
+    <ProgressBar android:id="@+id/pbCargando" style="?android:attr/progressBarStyleSmall"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:padding="120dp"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="No hay notificaciones asociadas a esta cuenta."
+        android:id="@+id/tvNoInfo"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvNotificaciones"
+        tools:listitem="@layout/notificacion_item"
+        android:dividerHeight="2.0sp"/>
+</LinearLayout>

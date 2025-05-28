@@ -1,0 +1,144 @@
+@import "twitter/bootstrap/bootstrap";
+
+// Set the correct sprite paths
+@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+@fa-font-path:   "../font";
+// Font Awesome 
+@import "fontawesome/font-awesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @link-color: #ff0000;
+.thumbnail {
+  padding: 10px;
+}
+.actions {
+  margin-bottom: 10px
+}
+
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 0px 0;
+  overflow: hidden;
+  background-color: #086886;
+}
+
+.top5 { margin-top:5px;}
+.top7 { margin-top:7px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; margin-bottom:15px}
+.top17 { margin-top:17px; }
+.top30 { margin-top:30px; }
+.datepicker {z-index: 1151 !important;}
+
+#menu_startup{
+  border: 1px solid #ddd;
+  border-radius: 4px;  
+}
+#menu_startup > li > a {
+  border-radius: 0px;
+}
+#menu_startup > li:first-child > a{
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px
+}
+#menu_startup > li:last-child > a{
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.nav-pills > li + li{
+  margin-left: 0px;
+}
+
+.pulse {
+  opacity: none;
+  -webkit-animation-name: 'pulse_animation';
+  -webkit-animation-duration: 5000ms;
+  -webkit-transform-origin:70% 70%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse_animation {
+  0% { -webkit-transform: scale(1); }
+  30% { -webkit-transform: scale(1); }
+  40% { -webkit-transform: scale(1.1); }
+  50% { -webkit-transform: scale(1); }
+  60% { -webkit-transform: scale(1); }
+  70% { -webkit-transform: scale(1.1); }
+  80% { -webkit-transform: scale(1); }
+  100% { -webkit-transform: scale(1); }
+}
+#user_remember_me {
+margin: 11px 14px 0;
+margin-top: 1px \9;
+line-height: normal;
+}
+.badge-danger{
+  background-color: #d9534f;
+  padding: 3px 5px;
+  font-size: 9px;
+}
+.badge-xs{
+  padding: 3px 5px;
+  font-size: 9px;
+}
+.field_with_errors {  
+    display: inline;  
+}  
+  
+.field_with_errors .message {  
+    color: #D00;  
+    padding-left: 5px;  
+    font-size: 18px;  
+} 
+
+.rate_ponder {
+  background-color: transparent;
+  border: 0px;
+  text-align: right;
+  float: right;
+  margin-right: 15px
+
+}
+
+.separado {
+  height: 20px !important; 
+
+}
+
+.margin_rate_ul{
+  margin-bottom: -20px !important;
+}
+/**
+ * Esta sentencia le cambia el color a los iconos dentro del NAVBAR   
+.navbar-nav > li > a > span, .navbar-default .navbar-nav > li > a > span {
+  color: #777777;
+}
+*/

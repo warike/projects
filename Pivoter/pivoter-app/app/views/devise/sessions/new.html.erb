@@ -1,0 +1,63 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+	<script>
+		$(document).ready(function(){
+			$("form").addClass('form-horizontal');
+		})
+	</script>
+			<%= form_for resource, :as => resource_name, :hmtl => { :class => 'form-horizontal'}, :url => session_path(resource_name)  do |f| %>
+              <div class="form-group">
+                <div class="col-sm-4 control-label"%></div>
+                  <div class="col-xs-8">
+                    <br>
+                    <h2><strong>Sign in</strong></h2>
+                    <hr>
+                  </div>
+              </div>
+			  <div class="form-group">
+			  	<%= f.label :email, :class => 'col-sm-4 control-label' %>
+			  	<div class="col-xs-8">
+			  		<%= f.email_field :email, autofocus: true, autocomplete: "off" , :class => 'form-control' %>
+		  		</div>
+			  </div>
+			  <div class="form-group">
+			  	<%= f.label :password, :class => 'col-sm-4 control-label' %>
+			  	<div class="col-xs-8">
+			    	<%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
+		    	</div>
+			  </div>
+			  <% if devise_mapping.rememberable? -%>
+			   <div class="form-group">
+			   		<%= f.label :remember_me , :class=>'col-sm-4 control-label'%>
+		    		<%= f.check_box :remember_me , :class=>'col-sm-4'%>
+			   </div> 
+			    	
+			  <% end -%>
+			
+			  <div class="form-group">
+                <div class="col-sm-4 control-label"%></div>
+                <div class="col-sm-7">
+				    <%= f.submit "Sign in" , :class => 'btn btn-success'%> |
+                    <%= link_to "Sign up", new_registration_path(resource_name), :class => 'btn btn-default' %>
+                </div>
+			  </div>
+			<% end %>
+			
+		</div>
+		<div class="col-md-6">
+          <div class="col-sm-12">
+            <br>
+            <h2><strong>Sign up with social network TEC</strong></h2>
+            <hr>
+                <a class="btn btn-block btn-social btn-linkedin btn-social-padding" href="<%= user_omniauth_authorize_path(:linkedin) %>">
+                  <i class="fa fa-linkedin"></i> Sign in with LinkedIn
+                </a>
+                <a class="btn btn-block btn-social btn-twitter btn-social-padding" href="<%= user_omniauth_authorize_path(:twitter) %>">
+                  <i class="fa fa-twitter"></i> Sign in with Twitter
+                </a>
+            <br>
+          </div>
+        </div>
+	</div>
+</div>

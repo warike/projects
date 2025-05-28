@@ -1,0 +1,49 @@
+source 'https://github.com/CocoaPods/Specs.git'
+xcodeproj 'scoodit'
+platform :ios, '10'
+use_frameworks!
+
+
+
+pod 'Bolts'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
+
+pod 'TwitterKit'
+
+
+target 'scoodit' do
+    
+    # 3rd Parties UI
+    pod 'XLPagerTabStrip', '~> 6.0'
+    pod 'SideMenu'
+    
+    # Images
+    pod 'Nuke', '~> 4.0'
+    
+    # Alerts & Messages
+    pod 'PMAlertController'
+    pod 'Toaster', '~> 2.0'
+    
+    # Storage & Network
+    pod 'SwiftyJSON'
+    pod 'Alamofire', '~> 4'
+    pod 'AWSS3'
+    
+    # 3rd Party Authentication
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+    pod 'Firebase/Messaging'
+    
+    
+    pod 'Clarifai'
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.0'
+        end
+    end
+end

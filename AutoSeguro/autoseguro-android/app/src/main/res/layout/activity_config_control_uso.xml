@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.samtech.autoseguro24siete.ConfigControlUsoActivity">
+
+    <ProgressBar
+        android:id="@+id/pbCargando"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:padding="120dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvNoInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:text="No hay información asociada a esta cuenta."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lvVehiculos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="2.0sp"
+        tools:listitem="@layout/conf_control_uso_item" />
+</LinearLayout>

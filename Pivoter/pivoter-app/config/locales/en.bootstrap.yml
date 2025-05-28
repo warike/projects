@@ -1,0 +1,31 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  startups:
+    validations:
+      name: "You must write a name"
+      name_unique: "This name has been taken."
+      logo: "You must define a logo"
+      videopitch: "You must define a videopitch"
+      description: "You must write a description"
+      category: "You must select a category"
+      country: "You must select a country"
+    
+  helpers:
+    actions: "Actions"
+    links:
+      back: "Back"
+      preview: "Preview"
+      cancel: "Cancel"
+      confirm: "Are you sure?"
+      destroy: "Delete"
+      new: "New"
+      edit: "Edit"
+    titles:
+      edit: "Edit %{model}"
+      save: "Save %{model}"
+      new: "New %{model}"
+      delete: "Delete %{model}"
+      
+     

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context="com.samtech.autoseguro24siete.CrearContactoActivity">
+
+    <EditText
+        android:id="@+id/etNombreContacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre Contacto"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/etFono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de Teléfono"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo Electrónico"
+        android:layout_marginTop="10dp" />
+
+    <ProgressBar
+        android:id="@+id/pbCargando"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="120dp"
+        android:visibility="gone" />
+</LinearLayout>

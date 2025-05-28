@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_height="match_parent" android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pbCargando"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:padding="100dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/llMapa">
+
+        <fragment  android:layout_width="match_parent"
+            android:layout_height="0dp" android:id="@+id/fMapa"
+            tools:context="com.samtech.autoseguro24siete.UbicacionMapaActivity"
+            android:name="com.google.android.gms.maps.SupportMapFragment" android:layout_weight="85" />
+
+        <LinearLayout
+            android:id="@+id/botones_inferior"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/franja_rojo_menu"
+            android:orientation="horizontal"
+            android:layout_weight="15"
+            android:gravity="center">
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_usuario_mapa"
+                android:src="@drawable/boton_ubicacion_celular"
+                android:layout_weight="25"
+                android:scaleType="fitCenter"
+                android:padding="20dp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_sos"
+                android:src="@drawable/sos_activado"
+                android:layout_weight="25"
+                android:scaleType="fitCenter"
+                android:padding="20dp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_estacionado_mapa"
+                android:src="@drawable/boton_modoestacionado"
+                android:layout_weight="25"
+                android:scaleType="fitCenter"
+                android:padding="20dp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_gps_mapa"
+                android:src="@drawable/boton_ubicacion_vehiculo"
+                android:layout_weight="25"
+                android:scaleType="fitCenter"
+                android:padding="20dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

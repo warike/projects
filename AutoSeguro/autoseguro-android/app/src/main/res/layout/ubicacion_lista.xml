@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
+    tools:context="com.samtech.autoseguro24siete.UbicacionListActivity">
+
+    <ProgressBar android:id="@+id/pbCargando" style="?android:attr/progressBarStyleSmall"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:padding="140dp"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/error_sin_vehiculo"
+        android:id="@+id/tvNoInfo"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lvVehiculos"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        tools:listitem="@layout/ubicacion_lista_item"
+        android:dividerHeight="2.0sp"
+        android:visibility="visible"
+        android:padding="10dp" />
+
+</LinearLayout>

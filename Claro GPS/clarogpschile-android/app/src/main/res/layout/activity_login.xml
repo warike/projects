@@ -1,0 +1,178 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity"
+    android:gravity="center|center_vertical|center_horizontal"
+    android:background="#ffffff">
+
+    <!-- Login progress -->
+    <ProgressBar android:id="@+id/login_progress" style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content" android:layout_height="fill_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <ScrollView android:id="@+id/login_form" android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="false">
+
+        <LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical"
+            android:gravity="center"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:src="@drawable/titulo_login"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="30dp"
+                android:paddingTop="20dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/login_form_bg">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:id="@+id/imageView2"
+                        android:contentDescription="icono_usuario"
+                        android:src="@drawable/usuario_rojo"/>
+
+                    <EditText android:id="@+id/usuario" android:layout_width="match_parent"
+                        android:layout_height="fill_parent" android:hint="@string/prompt_usuario"
+                        android:inputType="textEmailAddress" android:maxLines="1"
+                        android:singleLine="true"
+                        android:background="#ffffffff"
+                        android:paddingRight="10dp"
+                        android:paddingLeft="10dp"
+                        android:layout_marginLeft="-10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:id="@+id/imageView3"
+                        android:src="@drawable/clave_rojo" />
+
+                    <EditText android:id="@+id/password" android:layout_width="match_parent"
+                        android:layout_height="fill_parent" android:hint="@string/prompt_password"
+                        android:imeActionId="@+id/login"
+                        android:imeActionLabel="@string/action_sign_in_short"
+                        android:imeOptions="actionUnspecified" android:inputType="textPassword"
+                        android:maxLines="1" android:singleLine="true"
+                        android:background="#ffffffff"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_marginLeft="-10dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|end"
+                android:paddingRight="30dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Recordar contraseña"
+                    android:id="@+id/textView20"
+                    android:paddingRight="10dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/btn_interruptor"
+                    android:src="@drawable/on"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+
+            <ImageView android:id="@+id/btn_ingresar"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:contentDescription="Boton Ingresar"
+                android:src="@drawable/boton_rojo_ingresar"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:alpha="1" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="end"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btn_olvide"
+                    android:src="@drawable/boton_olvide_contrasena"
+                    android:layout_gravity="right|top" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView6"
+                    android:layout_weight="5"
+                    android:src="@drawable/logo_claro"
+                    android:scaleType="fitCenter"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="80dp"
+                    android:paddingBottom="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView4"
+                    android:src="@drawable/logo_samtech"
+                    android:paddingRight="0dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_weight="5"
+                    android:paddingLeft="80dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+
+

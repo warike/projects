@@ -1,0 +1,14 @@
+o<div class="boxFocus color1">
+	<h5>Operations</h5>
+	<ul class=" list-unstyled">
+		<li><span class="glyphicon glyphicon-edit"> </span> <%= link_to "Edit Startup", edit_dashboard_startup_path(@startup)%></li>
+		<li><span class="glyphicon glyphicon-user"> </span> <%= link_to "Manage Membership", dashboard_startup_path(@startup)%></li>
+		<li><span class="glyphicon glyphicon-bullhorn"> </span> <%= link_to "Manage Campains" , '#'%></li>
+		<li><span class="glyphicon glyphicon-arrow-down"> </span> <%= link_to "Desactivate" , '#'%></li>
+	</ul>
+	<h5>Others</h5>
+	<ul class="list-unstyled">
+		<li><span class="glyphicon glyphicon-wrench"> </span> <%= link_to "Create Startup", new_startup_path %></li>
+		<li><span class="glyphicon glyphicon-search"> </span> <%= link_to "Discover Startups", startups_published_path %></li>
+	</ul>
+</div>

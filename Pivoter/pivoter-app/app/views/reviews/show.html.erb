@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pivot:</strong>
+  <%= @review.pivot %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @review.user.id %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @review.comment %>
+</p>
+
+<p>
+  <strong>Ratelogo:</strong>
+  <%= @review.ratelogo %>
+</p>
+
+<p>
+  <strong>Ratepitch:</strong>
+  <%= @review.ratepitch %>
+</p>
+
+<p>
+  <strong>Ratevideo:</strong>
+  <%= @review.ratevideo %>
+</p>
+
+<p>
+  <strong>Rateidea:</strong>
+  <%= @review.rateidea %>
+</p>
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

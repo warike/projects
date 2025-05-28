@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pivoter - Where Entrepreneurs Pivot their capabilities</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="RABO IT">
+  <link href="css/main.css" rel="stylesheet">
+
+  <link rel="shortcut icon" href="images/favicon.ico">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application'%>
+  <%= csrf_meta_tags %>
+  <!-- Bootstrap Core CSS -->
+
+</head>
+
+
+<!-- Scrollspy set in the body -->
+<body id="home" data-spy="scroll" data-target=".main-nav" data-offset="73">
+
+<!--/////////////////////////////////////// NAVIGATION BAR ////////////////////////////////////////-->
+
+<section id="header">
+
+  <nav class="navbar navbar-fixed-top" role="navigation">
+
+    <div class="navbar-inner">
+      <div class="container">
+
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#navigation"></button>
+
+        <!-- Logo goes here - replace the image with your -->
+        <a href="javascript:void(0)" class="navbar-brand"> <i class="fa fa-gears"></i> PIVOTER</a>
+
+
+        <div class="collapse navbar-collapse main-nav" id="navigation">
+
+
+          <ul class="nav pull-right">
+
+            <!-- Menu items go here -->
+            <li class="active hidden"><a href="#home"><%= t('Menu') %></a></li>
+            <!--
+            <li><a href="#features"><%= t('Servicios') %></a></li>
+            <li><a href="#info"><%= t('Nosotros') %></a></li>
+            <li><a href="#testimonials"><%= t('Clientes') %></a></li>
+            <li><a href="#faq"><%= t('Contacto') %></a></li>
+            -->
+            <li>
+              <%= link_to({controller: 'welcome', action: 'index', locale: 'es'}) do  %>
+                  <img style="border-radius: 11px;" src="images/spain_flag.png" >
+              <% end %>
+              <%= link_to({controller: 'welcome', action: 'index', locale: 'en'}) do  %>
+                  <img style="border-radius: 11px;" src="images/uk_flag.png">
+              <% end %>
+              <%= link_to({controller: 'welcome', action: 'index', locale: 'pt'}) do  %>
+                  <img style="border-radius: 11px;" src="images/brazil_flag.png">
+              <% end %>
+
+            </li>
+          </ul>
+
+        </div><!-- /nav-collapse -->
+      </div><!-- /container -->
+    </div><!-- /navbar-inner -->
+  </nav>
+
+</section>
+
+<!--/////////////////////////////////////// FEATURES SECTION ////////////////////////////////////////-->
+<div class="container">
+
+  <%= yield %>
+
+
+</div>
+<!--//////////////////////////////////////// FOOTER SECTION ////////////////////////////////////////-->
+<section id="footer">
+  <div class="bottom-menu-inverse">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-6">
+          <p>Copyright &copy; 2014 -  Developed by <a href="http://www.raboit.com">
+            <img style="border-radius: 11px;" src="http://www.gravatar.com/avatar/0a1e5b08d447ac5f42674b0a31d066aa.png?d=mm&r=PG&s=25">
+            <img style="border-radius: 11px;" src="https://secure.gravatar.com/avatar/158d14cd62eead63010187638e2a97f4.png?d=mm&r=PG&s=25"></a>
+        </div>
+
+        <div class="col-md-6 social">
+          <ul class="bottom-icons">
+            <li>
+              <a href="#" class="fui-facebook"></a>
+            </li>
+            <li>
+              <a href="#" class="fui-twitter"></a>
+            </li>
+            <li>
+              <a href="#" class="fui-pinterest"></a>
+            </li>
+            <li>
+              <a href="#" class="fui-googleplus"></a>
+            </li>
+            <li>
+              <a href="#" class="fui-dribbble"></a>
+            </li>
+            <li>
+              <a href="#" class="fui-vimeo"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+  </div><!-- /container -->
+
+</section>
+<!--//////////////////////////////////////// end FOOTER SECTION ////////////////////////////////////////-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"> Create invitation</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-success hidden" role="alert" id="alert_suscribe_modal">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <i class="fa fa-check"></i> <%= t('alert').to_s.html_safe %>
+
+        </div>
+        <%= form_for @visit, :remote => true, data: {type: :json } , html: { role: :form, 'data-model' => 'visit', :id => 'contact-form' } do |f| %>
+            <div class="form-group">
+              <div class="input-group">
+                <%= f.text_field :email, :placeholder => t('email_placeholder'), :class => 'form-control input-hg'%>
+                <%= f.hidden_field :referralID, :value=> params[:ref] %>
+                <span class="input-group-btn">
+                                <button class="btn btn-inverse btn-hg" type="submit" name="submit">
+                                  <span class="fui-mail"></span></button>
+                              </span>
+              </div><!-- /input-group -->
+
+            </div>
+            <button type="submit" class="btn btn-info input-lg  col-xs-12">
+              <%=t('email_button')%></button>
+        <% end %>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40741810-9', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<!--//////////////////////////////////////// JAVASCRIPT LOAD ////////////////////////////////////////-->
+
+<!-- Feel free to remove the scripts you are not going to use -->
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/jquery.magnific-popup.js"></script>
+<script src="js/jquery.fitvids.min.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script src="js/bootstrap-switch.js"></script>
+<script src="js/flatui-checkbox.js"></script>
+<script src="js/flatui-radio.js"></script>
+<script src="js/jquery.tagsinput.js"></script>
+<script src="js/jquery.placeholder.js"></script>
+<script src="js/custom.js"></script>
+
+<!--//////////////////////////////////////// end JAVASCRIPT LOAD ////////////////////////////////////////-->
+
+</body>
+</html>

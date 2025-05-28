@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Startup:</strong>
+  <%= @pivot.startup %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @pivot.start_date %>
+</p>
+
+<p>
+  <strong>Finish date:</strong>
+  <%= @pivot.finish_date %>
+</p>
+
+<%= link_to 'Edit', edit_pivot_path(@pivot) %> |
+<%= link_to 'Back', pivots_path %>

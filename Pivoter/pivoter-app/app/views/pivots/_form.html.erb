@@ -1,0 +1,31 @@
+<%= form_for @pivot, :html => {:class =>'form-inline'}, :validate => true do |f| %>
+<div class="modal fade" id="modal_pivot" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"> <span class="glyphicon glyphicon-globe"> Pivot Cycle</span></h4>
+      </div>
+      
+      <div class="modal-body">       
+	    	<div class="form-group col-md-offset-1">
+				<%= f.label :start_date %> <br>
+				<%= f.text_field :start_date,:class =>'form-control', :readonly => true %>
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Your Pivot starts Now!"></span>
+			</div>
+			<div class="form-group col-md-offset-1">
+				<%= f.label :finish_date %> <br>
+				<%= f.text_field :finish_date, :validate =>{:later => true}, :class =>'form-control',:placeholder =>'Click to select', :data => {:behaviour => 'datepicker'} %>
+				<span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Choose when to finish it"></span>
+			</div>
+			<%= f.text_field :startup_id , :hidden=>"true" %>				
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit :value=>"Pivot Now!", :class => 'btn btn-success'%>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<% end %>

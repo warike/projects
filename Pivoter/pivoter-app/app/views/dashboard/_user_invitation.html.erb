@@ -1,0 +1,37 @@
+<script>
+$(document).ready(function(){
+  $("#new_user").submit(function () {  
+    if($("#user_email").val().length < 1) {  
+        alert("Must write a e-mail!");  
+        return false;  
+    }  
+  }); 
+  $('#send_button').click(function () {
+    var btn = $(this)
+    btn.button('loading')
+  });
+});
+</script>
+
+
+<!-- MODAL -->
+<%= form_for User.new , :url => {:controller => "dashboard", :action => "invite_user"} do |f| %>
+<div class="modal fade" id="modal_invite_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Invite a Friend</h4>
+      </div>
+      <div class="modal-body">
+        <%= f.text_field :email, :placeholder => "name@exmaple.com", :class => 'form-control'%> 
+        <%= hidden_field_tag :startup_id, @startup.id %>
+      </div>  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Send Email", :id => "send_button" ,:class => 'btn btn-primary', data: {:"loading-text" => "Sending ..."}  %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

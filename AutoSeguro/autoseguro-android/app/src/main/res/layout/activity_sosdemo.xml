@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.samtech.autoseguro24siete.SOSDemoActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Emergencia"
+        android:textSize="25sp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Está seguro que desea solicitar \nayuda?"
+        android:textSize="15sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NO"
+            android:id="@+id/btnNoSosDemo"
+            android:layout_weight="0.5"
+            android:background="#B71C1C"
+            android:layout_margin="5dp"
+            android:textColor="#FFFFFF"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SI"
+            android:id="@+id/btnSiSosDemo"
+            android:layout_weight="0.5"
+            android:background="#B71C1C"
+            android:layout_margin="5dp"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</LinearLayout>

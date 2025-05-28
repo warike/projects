@@ -1,0 +1,64 @@
+<div class="container">
+
+	<h1><p>Welcome To Pivoter</p></h1>
+	<div class="alert alert-success" role="alert">
+		Finish your inscription for start to participate in the startup
+	</div>
+
+	<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put }, :hmtl=>{ :class => 'form-vertical'} do |f| %>
+	  <%= devise_error_messages! %>
+	  <%= f.hidden_field :invitation_token %>
+
+	  <div class="form-group">
+        <%= f.label :username, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :username, :class => 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :name, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :name, :class => 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :lastname, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :lastname, :class => 'form-control' %>
+        </div>
+      </div>
+
+	    <div class="form-group">
+			<%= f.label :country, :class => 'control-label' %>
+		  	<div class="controls">
+		  		<%= f.select(:country,options_for_select(Startup.new.countries,'Chile'),{}, :class => 'form-control select2')%>
+			</div>
+		</div>
+
+      <div class="form-group">
+        <%= f.label :phone_number, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :phone_number, :class => 'form-control' %>
+        </div>
+      </div>
+
+	  <div class="form-group">
+	  	<%= f.label :email, :class => 'control-label' %><br />
+	  	<%= f.email_field :email, autofocus: true, autocomplete: "off", disabled: "disabled" , :class => 'form-control' %>
+	  </div>
+	  <hr>
+	  <div class="form-group">
+	  <p><%= f.label :password %><br />
+	  <%= f.password_field :password, :class => 'form-control' %></p>
+	  </div>
+
+	  <div class="form-group">
+	  <p><%= f.label :password_confirmation %><br />
+	  <%= f.password_field :password_confirmation, :class => 'form-control'%></p>
+	  </div>
+
+	  <p><%= f.submit "Create Account", :class => 'btn btn-primary'%></p>
+	<% end %>
+</div>

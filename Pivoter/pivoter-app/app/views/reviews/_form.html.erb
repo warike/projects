@@ -1,0 +1,140 @@
+<%=javascript_include_tag '','star-rating.js' %>	
+<%=stylesheet_link_tag '', 'star-rating.css' %>
+	<script language="JavaScript">
+		jQuery(function($){
+			$(".rating").rating();
+		    $.fn.render_form_errors = function(errors){
+	
+	        $form = this;
+	        this.clear_previous_errors();
+	        model = this.data('model');
+	    
+	        // show error messages in input form-group help-block
+	        $.each(errors, function(field, messages){
+        	  $("#result_list").append( "<li>"+messages+"</li>" );
+	        });
+	        $("#model_result").addClass('alert-danger');
+	        $("#model_result").show();
+	    
+	      };
+	    
+	      $.fn.clear_previous_errors = function(){
+	      	$("#model_result").removeClass();
+	      	$("#model_result").addClass('alert');
+	        $("#result_list").html('');
+	      }
+		  $.fn.render_success_message = function(){
+		  	$form = this;
+	        this.clear_previous_errors();
+	        
+	      	$(".ui-slider").remove();
+	      	$("#botton_save").remove();
+	      	$("#result_list").append( "Review <b>successfuly</b> saved!" );
+	      	$("#model_result").addClass('alert-success');
+	        $("#model_result").show();
+	        $("#discover_startup").addClass('pulse');
+              $('html, body, #discover_startup').animate({scrollTop:0}, 'slow');
+	      }  
+		    
+		    
+	   $("#new_review")
+	        .submit(function(){
+	            $("#myModal").modal('hide');  
+	        })
+	      .bind('ajax:error','form#new_review', function(event, jqxhr, settings, exception) {
+	      		$(event.data).render_form_errors( $.parseJSON(jqxhr.responseText) );
+	      	})
+	      .bind('ajax:success', function(event, data,xhr, status, error) {
+	      		$(event.data).render_success_message();
+	      	});
+	});
+	</script>
+<div class="well text-center">
+	<%= form_for @review, remote: true, data: {type: 'json' } , html: { role: :form, 'data-model' => 'review' } do |f| %>
+                    <h2>Review</h2> 
+                    <div class="row-fluid">
+            		<div id="model_result" class="alert" style="display:none">
+						<ul id="result_list">	
+						</ul>
+				    </div>
+                      <div class="form-group row">
+                        <div class="col-md-6">
+                          <label class="control-label" for="idea-amount"><small>Idea</small>
+                          </label>
+                        </div>
+                        <div class="col-md-6">
+                          <%= f.text_field :rateidea, :class=>"rating", :data=>{:min=>0, :max=>5, :step=>1, :size=>'xs', :symbol=>'&#xe007;'.html_safe, :stars=>5} %>
+                        </div>
+                        <%= f.hidden_field :pivot_id %>
+                        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                      </div>
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <label id="review_rate_label" class="control-label" for="pitch-amount">
+                              <small>Pitch</small>
+                            </label>
+                          </div>
+                          <div class="col-md-6">
+                            <%= f.text_field :ratepitch, :class=>"rating", :data=>{:min=>0, :max=>5, :step=>1, :size=>'xs', :symbol=>'&#xe007;'.html_safe, :stars=>5} %>
+                          </div>
+                        </div>
+            
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <label class="control-label" for="logo-amount">
+                              <small>Logo</small>
+                            </label>
+                          </div>
+                          <div class="col-md-6">
+                            <%= f.text_field :ratelogo, :class=>"rating", :data=>{:min=>0, :max=>5, :step=>1, :size=>'xs', :symbol=>'&#xe007;'.html_safe, :stars=>5} %>
+                          </div>
+                        </div>
+            
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <label class="control-label" for="video-amount">
+                              <small>Video Pitch</small>
+                            </label>
+                          </div>
+                          <div class="col-md-6">
+                            <%= f.text_field :ratevideo, :class=>"rating", :data=>{:min=>0, :max=>5, :step=>1, :size=>'xs', :symbol=>'&#xe007;'.html_safe, :stars=>5} %>
+                          </div>
+                        </div>
+            
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <label class="control-label" for="name-amount">
+                              <small>Name</small>
+                            </label>
+                          </div>
+                          <div class="col-md-6">
+                            <%= f.text_field :ratename, :class=>"rating", :data=>{:min=>0, :max=>5, :step=>1, :size=>'xs', :symbol=>'&#xe007;'.html_safe, :stars=>5} %>
+                          </div>
+                        </div>
+            			<div class="form-group">
+            				<%= f.button "Review" , :type=>'button',:id=>'botton_save', :class => 'btn btn-primary pull-right', 'data-toggle' => 'modal', 'data-target' => "#myModal", "data-loading-text" => "Loading...", 'data-backdrop' => 'static' %>
+            			</div>
+                            
+            
+                    </div>
+                </br> 
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+
+                        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-comment"></span> What's your Advice to <%= @startup.name %>?</h4>
+                      </div>
+                      <div class="modal-body">
+                            <%= f.text_area :comment, :class => "form-control" %>
+                      </div>
+                      <div class="modal-footer">
+                        <%= f.submit "Save", :class => "btn btn-primary" %>                        
+                      </div>
+                    </div>
+                </div>
+            </div>    
+        <% end %>
+</div>	
+	
+    

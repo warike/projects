@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-10">
+    <h1>Team Leader</h1>
+    <hr>
+  </div>
+  <div class="col-md-2 top15">
+    <%= link_to '<span class="glyphicon glyphicon-envelope"></span> Invite User'.html_safe,"#", data: { :toggle => "modal", :target => "#modal_invite_user"},:class => 'btn btn-primary'  %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <%= image_tag(@member_leader.user.gravatar_url(:size=>90), :class => 'img-thumbnail imgBorder',:style => 'width:100px;height:100px;')%>
+  </div>
+  <div class="col-md-10 top15">
+    <div class="col-md-6">
+      <%= @member_leader.user.email %>
+    </div>
+ </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-md-10">
+	<br>
+    <h1>Members</h1>
+    <hr>
+  </div>
+</div>
+
+<% @members.each do |member| %>
+<div class="row">
+  <div class="col-md-2">
+    <%= image_tag(member.user.gravatar_url(:size=>90), :class => 'img-thumbnail imgBorder',:style => 'width:100px;height:100px;')%>
+  </div>
+  <div class="col-md-10 top15">
+  	<div class="col-md-6">
+  		<%= member.user.email %>
+	  	</br>
+	  	<%= member.role %>
+  	</div>
+	<div class="col-md-6">
+        <%= link_to '', member, method: :delete, data: { toggle: "tooltip", placement: "bottom", title: "Delete this member" ,confirm: 'Are you sure you want delete this member?' }, :class => 'btn btn-danger glyphicon glyphicon-remove-sign' %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10">
+    <hr>
+  </div>
+</div>
+
+<%end%>
+<%= render :partial => 'user_invitation' %>

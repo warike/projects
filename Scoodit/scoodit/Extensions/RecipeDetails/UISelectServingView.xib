@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UISelectServingView">
+            <connections>
+                <outlet property="doneButton" destination="ygn-tV-vzo" id="9MV-zG-cpL"/>
+                <outlet property="servingPickerView" destination="0y8-gP-vC8" id="gx5-pc-z5Y"/>
+                <outlet property="visualEffectView" destination="y44-YP-cJp" id="hvd-C8-kZj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="212" height="209"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y44-YP-cJp">
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mBH-Mc-Wl8">
+                        <frame key="frameInset"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
+                <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="3S6-ca-jds">
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0y8-gP-vC8">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="212" id="Neq-fq-RY3"/>
+                                <constraint firstAttribute="height" constant="162" id="qgZ-Ud-1Us"/>
+                            </constraints>
+                        </pickerView>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygn-tV-vzo">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                            <state key="normal" title="Done">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="0y8-gP-vC8" secondAttribute="trailing" id="4js-56-Jfb"/>
+                        <constraint firstItem="ygn-tV-vzo" firstAttribute="leading" secondItem="3S6-ca-jds" secondAttribute="leading" id="8eN-s6-6Dw"/>
+                        <constraint firstItem="ygn-tV-vzo" firstAttribute="top" secondItem="0y8-gP-vC8" secondAttribute="bottom" constant="8" id="KJ9-Fj-nXR"/>
+                        <constraint firstAttribute="trailing" secondItem="ygn-tV-vzo" secondAttribute="trailing" id="M9A-9s-aQE"/>
+                        <constraint firstAttribute="bottom" secondItem="ygn-tV-vzo" secondAttribute="bottom" constant="3" id="dDd-2s-n7o"/>
+                        <constraint firstItem="0y8-gP-vC8" firstAttribute="leading" secondItem="3S6-ca-jds" secondAttribute="leading" id="gae-VO-dCV"/>
+                        <constraint firstItem="0y8-gP-vC8" firstAttribute="top" secondItem="3S6-ca-jds" secondAttribute="top" id="pjo-6D-N1j"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="y44-YP-cJp" secondAttribute="trailing" id="4oH-c5-TxL"/>
+                <constraint firstItem="y44-YP-cJp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WCn-pa-pLc"/>
+                <constraint firstItem="3S6-ca-jds" firstAttribute="leading" secondItem="y44-YP-cJp" secondAttribute="leading" id="dMI-2C-v8V"/>
+                <constraint firstItem="3S6-ca-jds" firstAttribute="top" secondItem="y44-YP-cJp" secondAttribute="top" id="deR-Xn-ZeR"/>
+                <constraint firstAttribute="bottom" secondItem="y44-YP-cJp" secondAttribute="bottom" id="ohv-Fv-nw8"/>
+                <constraint firstItem="y44-YP-cJp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vbc-12-eL8"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="126" y="-195.5"/>
+        </view>
+    </objects>
+</document>

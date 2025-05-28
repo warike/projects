@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
+    android:dividerHeight="0dp"
+    android:divider="@null"
+    android:orientation="vertical"
+    android:id="@+id/rlItem">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/llNombre"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Nombre:"
+            android:id="@+id/lblVehiculo"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/txtVehiculo"
+            android:layout_marginLeft="5dp"
+            android:maxLength="15"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/lblIgnicion"
+        android:textColor="@android:color/black"
+        android:text="Ignición:"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="80dp"
+        android:paddingTop="5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llNombre"
+        android:layout_alignLeft="@+id/llNombre"
+        android:layout_alignStart="@+id/llNombre"
+        android:id="@+id/linearLayout2"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Ubicación:"
+            android:id="@+id/lblUbicacion"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/txtUbicacion"
+            android:layout_marginLeft="10dp"
+            android:maxLength="30"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/txtIgnicion"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="Apagado"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:paddingRight="10dp"
+        android:layout_alignRight="@+id/lblIgnicion"
+        android:layout_alignParentStart="false" />
+
+</RelativeLayout>

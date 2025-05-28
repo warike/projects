@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.samtech.autoseguro24siete.UsuariosActivity">
+
+    <LinearLayout
+        android:id="@+id/llOpciones"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvEditar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|left"
+            android:layout_weight="70"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="Editar"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ff2417" />
+
+        <ImageView
+            android:id="@+id/ivAgregar"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="30"
+            android:paddingBottom="10dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:scaleType="fitEnd"
+            android:src="@drawable/signo_mas" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pbCargando"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:padding="120dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvNoInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:text="No hay información asociada a esta cuenta."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lvVehiculos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="2.0sp"
+        tools:listitem="@layout/usuarios_lista_item" />
+
+</LinearLayout>

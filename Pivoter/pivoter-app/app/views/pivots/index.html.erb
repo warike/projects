@@ -1,0 +1,31 @@
+<h1>Listing pivots</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Startup</th>
+      <th>Start date</th>
+      <th>Finish date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pivots.each do |pivot| %>
+      <tr>
+        <td><%= pivot.startup %></td>
+        <td><%= pivot.start_date %></td>
+        <td><%= pivot.finish_date %></td>
+        <td><%= link_to 'Show', pivot %></td>
+        <td><%= link_to 'Edit', edit_pivot_path(pivot) %></td>
+        <td><%= link_to 'Destroy', pivot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pivot', new_pivot_path %>

@@ -1,0 +1,29 @@
+ <section id="page">
+      <section id="content" class="mt30 pb30">
+        <div class="container">
+          <div class="row">
+            <center><h1> <%= flash[:notice] %></h1></center>
+            <div class="col-md-6 col-md-offset-3">
+
+              <article class="boxIcon hover text-center" >
+                
+               
+                <h1>Not Authorized</h1>
+               
+                <center>
+                  <img src="http://www.majhost.com/gallery/sammy300/Random/you_shall_not_pass.png" style="width:50%;height:50%;" >
+                </center>
+
+                <% if !user_signed_in? %>
+                      <%= link_to "Please Login", new_user_session_path, :class => 'btn btn-lg btn-primary mt15' %>
+                <% end%>
+                
+              </article>
+              
+
+            </div>
+
+          </div>
+        </div>
+        </section>
+      </section>

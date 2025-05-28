@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llVideo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.samtech.autoseguro24siete.StartActivity"
+    android:layout_gravity="center">
+
+    <VideoView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:scrollbars="none"
+        android:id="@+id/videoview"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btnProbarApp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="0.5"
+            android:background="#113880"
+            android:text="Probar Aplicación"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnIniciarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="0.5"
+            android:background="#B71C1C"
+            android:text="Iniciar Sesión"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</FrameLayout>

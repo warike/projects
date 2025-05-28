@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">Auto Seguro 24Siete</string>
+    <string name="app_ws">LobarnecheaAndroid</string>
+    <string name="app_ws2">Claro</string>
+
+    <string name="hello_world">Hola mundo!</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="action_buscar">Buscar</string>
+    <string name="action_guardar">Guardar</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_usuario">Usuario</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Iniciar sesión</string>
+    <string name="action_sign_in_short">Iniciar sesión</string>
+
+    <string name="error_invalid_email">El email es invalido</string>
+    <string name="error_pass_invalido">La contraseña es muy corta</string>
+    <string name="error_pass_incorrecto">La contraseña es incorrecta</string>
+    <string name="error_campo_necesario">Este campo es necesario</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="error_sin_vehiculo">La cuenta no tiene vehiculos asignados</string>
+
+    <!-- GPS -->
+    <string name="titulo_conf_GPS">Configuración de GPS</string>
+    <string name="pregunta_gps_inactivo">El GPS está deshabilitado. ¿Desea ir a la configuración del GPS?</string>
+    <string name="GPS_btn_afirmativo">Configuración</string>
+    <string name="GPS_btn_negativo">Cancelar</string>
+
+    <!-- Mensajes del menu principal -->
+    <string name="error_cambiar_modo_estacionado">No se pudo cambiar el modo estacionado</string>
+    <string name="SOS_enviado">Se ha enviado el SOS</string>
+    <string name="SOS_no_enviado">No se ha enviado el SOS</string>
+    <string name="SOS_no_ubicacion">No se ha podido determinar su ubicación. Intente nuevamente.</string>
+    <string name="SOS_pregunta">Está seguro que desea solicitar ayuda?</string>
+    <string name="SOS_btn_afirmativo">Si</string>
+    <string name="SOS_btn_negativo">No</string>
+    <string name="title_activity_ubicacion_mapa">Ubicación Vehículo</string>
+    <string name="error_cambiar_ctrl_velocidad">No se pudo cambiar el control de velocidad.</string>
+
+    <!-- Mensajes de la Ubicacion -->
+    <string name="error_no_ubicacion_usuario">No se ha podido determinar la ubicación del usuario. Intente nuevamente.</string>
+    <string name="error_no_ubicacion_GPS">No se ha podido determinar la ubicación del Vehículo. Intente nuevamente.</string>
+    <string name="ubicacion_cambiar_tipo_mapa">Cambiar tipo mapa</string>
+    <string name="ubicacion_refrescar_mapa">Recargar mapa</string>
+    <string name="title_activity_historial">Historial</string>
+
+    <!-- Mensajes del Historial -->
+    <string name="error_leer_historial">Hubo un error al leer el historial.</string>
+
+    <!-- Titulos -->
+    <string name="title_activity_historial_mapa">Historial</string>
+    <string name="title_activity_splash">Auto Seguro 24Siete</string>
+    <string name="title_activity_modo_estacionado">Activar Modo Estacionado</string>
+    <string name="title_activity_ubicacion_list">Ubicación Vehículos</string>
+    <string name="title_activity_configuracion">Configuración</string>
+    <string name="title_activity_notificaciones">Notificaciones</string>
+    <string name="title_activity_control_velocidad">Activar Velocidad máx.</string>
+
+    <!-- Mensajes de la configuracion -->
+    <string name="error_no_hay_veh">No hay vehículos asociados a esta cuenta.</string>
+    <string name="error_psw_distintos">Las contraseñas no coinciden.</string>
+
+    <!-- Mensajes del menu notificaciones -->
+    <string name="texto_notif_superior">Active las notificaciones para mostrar alertas de cada opción cuando Modo Estacionado este activado.</string>
+    <string name="texto_notif_inferior">Se permite alertas cuando hay apertura de puertas en el vehículo y/o cuando se encienda la alarma.</string>
+    <string name="texto_notif_encendido_motor">Se permite alertas al encederse el motor.</string>
+    <string name="texto_notif_movimiento">Se permite alertas al estar en movimiento el vehículo.</string>
+    <string name="texto_notif_desconex_gps">Se permite alertas cuando el GPS pierde toma de corriente.</string>
+    <string name="error_una_activa">Debe permanecer activa por lo menos, Encendido de motor o Movimiento</string>
+
+    <string name="title_activity_vel_max">Velocidad Máxima</string>
+    <string name="title_activity_cambiar_nombre">Vehículos</string>
+
+    <!-- Mensajes de cambiar nombre de vehiculos -->
+    <string name="error_no_cambio">No se pudo cambiar el nombre del vehículo. Intente nuevamente.</string>
+    <string name="cambio_nombre_realizado">Se guardaron los nombres de los vehículos.</string>
+    <string name="title_activity_usuarios">Usuarios</string>
+    <string name="title_activity_crear_usuario">Usuarios</string>
+    <string name="title_activity_agregar_pat_usuario">Usuarios</string>
+    <string name="title_activity_control_uso">Activar Control de Uso</string>
+    <string name="title_activity_config_control_uso">Modo Control de Uso</string>
+
+    <!-- Mensajes de cambiar velocidad maxima -->
+    <string name="exito_cambiar_vel_max">Se actualizaron las velocidades de los vehiculos</string>
+
+    <!-- Mensajes de control de uso -->
+    <string name="exito_cambiar_ctrl_uso">Se actualizaron las configuraciones del Control de Uso</string>
+    <string name="error_horas">El horario ingresado no es valido, intente nuevamente.</string>
+
+    <!-- Mensajes de Usuarios -->
+    <string name="correcto_eliminar_usuario">Se elimino el usuario correctamente</string>
+
+    <!-- Mensajes de Contactos -->
+    <string name="correcto_eliminar_contacto">Se elimino el contacto correctamente</string>
+    <string name="error_incompleto">Debe completar todos los campos</string>
+
+    <!-- Mensajes de conexión -->
+    <string name="error_conexion">Error en la conexión. Compruebe su conexión a Internet.</string>
+
+    <string name="title_activity_contactos">Contactos</string>
+    <string name="title_activity_crear_contacto">Contacto</string>
+    <string name="title_activity_crear_usuario_demo">Crear Usuario</string>
+    <string name="texto_demo_app">Aplicación DEMO, algunas funciones están deshabilitadas.\n
+        Para utilizar la aplicación, debe contratar el servicio Auto Seguro 24 siete e instalar los dispositivos en el vehículo.\n
+        Para más información contáctenos al 28988920</string>
+
+    <!-- Mensajes alertDialog solicitar ejecutivo -->
+    <string name="mensaje_modo_estacionado">Mensaje Modo Estacionado. Desea solicitar un ejecutivo?</string>
+    <string name="mensaje_vel_max">Mensaje VelMax. Desea solicitar un ejecutivo?</string>
+    <string name="mensaje_historial">Mensaje Historial. Desea solicitar un ejecutivo?</string>
+    <string name="mensaje_ubicacion">Mensaje Ubicacion. Desea solicitar un ejecutivo?</string>
+    <string name="mensaje_notificaciones">Mensaje Notificaciones. Desea solicitar un ejecutivo?</string>
+
+    <string-array name="dias_str">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miércoles</item>
+        <item>Jueves</item>
+        <item>Viernes</item>
+        <item>Sábado</item>
+        <item>Domingo</item>
+    </string-array>
+
+    <string-array name="dias_valores">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="horas_str">
+        <item>00:00</item>
+        <item>01:00</item>
+        <item>02:00</item>
+        <item>03:00</item>
+        <item>04:00</item>
+        <item>05:00</item>
+        <item>06:00</item>
+        <item>07:00</item>
+        <item>08:00</item>
+        <item>09:00</item>
+        <item>10:00</item>
+        <item>11:00</item>
+        <item>12:00</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:00</item>
+        <item>17:00</item>
+        <item>18:00</item>
+        <item>19:00</item>
+        <item>20:00</item>
+        <item>21:00</item>
+        <item>22:00</item>
+        <item>23:00</item>
+    </string-array>
+
+</resources>

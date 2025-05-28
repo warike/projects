@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.samtech.autoseguro24siete.NotificacionesActivity">
+
+    <TextView
+        android:id="@+id/txtInform"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp"
+        android:text="Active las notificaciones para mostrar alertas de cada opción cuando Modo Estacionado este activado."
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ProgressBar
+        android:id="@+id/pbCargando"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:padding="120dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvNoInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:text="No hay notificaciones asociadas a esta cuenta."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lvNotificaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="2.0sp"
+        tools:listitem="@layout/notificacion_item" />
+</LinearLayout>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pivot_id: 
+  user_id: 
+  comment: MyText
+  date_data: 2014-07-17
+  ratelogo: 1
+  ratepitch: 1
+  ratevideo: 1
+  rateidea: 1
+
+two:
+  pivot_id: 
+  user_id: 
+  comment: MyText
+  date_data: 2014-07-17
+  ratelogo: 1
+  ratepitch: 1
+  ratevideo: 1
+  rateidea: 1

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        Pivoter - the place where entrepreneurs find the way to succeed
+    </title>
+    <meta charset="utf-8">
+    <meta name="description" content="Pivotr is cloud-based service for entrepreneurs">
+    <meta name="author" content="Pivoter">
+    <!-- Mobile Specific Metas
+	================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- FONTS
+	================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400' rel='stylesheet' type='text/css'>
+    
+    <%=stylesheet_link_tag 'application', media: 'all'%>
+    <%=javascript_include_tag 'application'%>
+    <%=javascript_include_tag '', "rails.validations" %> 
+    <%=csrf_meta_tags %>
+    <%=favicon_link_tag 'favicon.ico' %>
+</head>
+
+<body>
+    <div id="globalWrapper">
+        <header class="navbar-fixed-top ">
+
+            <!-- header -->
+            <div id="mainHeader" role="banner" class="fixedHeader">
+                <div class="container">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+                            <!-- responsive navigation -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- Logo -->
+                            <a class="navbar-brand" href="<%= root_path %>">
+                              <%= image_tag( "main_logo_pivoter.png", :alt=>"Main LOGO", :style => 'width:60%; height:100%') %>
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="mainMenu">
+                            <!-- Main navigation -->
+                            <ul class="nav navbar-nav">
+
+                                <li class="primary">
+                                    <a href="<%= root_path %>" class="firstLevel hasSubMenu"><span class="glyphicon glyphicon-home"></span> Home</a>
+                                </li>
+                                <li class="dropdown">
+								    <a href="#" class="dropdown-toggle firstLevel hasSubMenu" data-toggle="dropdown"><span class="glyphicon glyphicon-send"></span> Startups</a>
+								    <ul class="dropdown-menu" role="menu">
+                                      <li>
+                                        <a href="<%= new_startup_path %>">
+                                          Publish IDEA
+                                          <span class="glyphicon glyphicon-plus pull-right"></span>
+                                        </a>
+                                      </li>
+								        <% if user_signed_in? %>
+									        <li class="divider"></li>
+									        <li>
+									        	<a href="<%= dashboard_path%>">
+									        		Dashboard
+									        		<span class="glyphicon glyphicon-list-alt pull-right"></span>
+								        		</a>
+									        </li>
+								        <%end%>
+								    </ul>
+								</li>
+								<li>
+									<a href="<%= startups_published_path %>">
+										<span class="glyphicon glyphicon-globe"></span>
+										Discover
+									</a>
+					        	</li>
+
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="primary">
+                                  <a href="<%= new_startup_path %>" class="firstLevel hasSubMenu" >
+                                    <span class="glyphicon glyphicon-plus"></span> Publish IDEA
+                                  </a>
+                                </li>
+                            	<li class="dropdown">
+								    <a href="#" class="dropdown-toggle firstLevel hasSubMenu" data-toggle="dropdown">
+								    	<%= 
+								    		(user_signed_in?) ? (image_tag current_user.gravatar_url(:size=>24, :default =>'mm'), :class=>'imgBorder') : "<span class='glyphicon glyphicon-cog'></span>".html_safe
+								    	%>
+							    	</a>
+                                  <ul class="dropdown-menu" role="menu">
+                                    <% if user_signed_in? %>
+                                        <li><%= link_to current_user.email, edit_user_registration_path, :class => 'navbar-link' %></li>
+                                        <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+                                        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+                                    <% else %>
+                                        <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
+                                        </li>
+                                        <li> <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></li>
+                                    <% end %>
+                                  </ul>
+								</li>
+                            	
+                        	</ul>
+                            <!-- End main navigation -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- header -->
+<section id="portfolio">
+    <header class="page-header">
+        <div class="container">
+            <ul id="navTrail">
+                <li><a href="#">HOME</a>
+                </li>
+              <li><a href="#"><%= controller_name.upcase %></a>
+                </li>
+              <li id="navTrailLast"><%= action_name.upcase %>
+                </li>
+            </ul>
+        </div>
+    </header>
+</section>
+        <div id="content" class="container-fluid">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 top15">
+                <% flash.each do |key, value| %>
+                    <%= flash_class(key, value) %>
+                <% end %>
+              </div>
+            </div>
+
+            <%= yield %>
+          </div>
+        </div>
+
+        <!-- footer -->
+        <footer id="footerWrapper">
+            <section id="mainFooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="footerWidget">
+                              <%= image_tag( "main_logo_pivoter.png", :id=>"footerLogo")%>
+                            </div>
+                        </div>
+	                  <div class="col-sm-4">
+	                      <div class="footerWidget">
+	                          <h3><strong> Pivoter</strong></h3>
+	                          <p>
+	                             It is a cloud-based platform for entrepreneurs, which allows you to know how valuable your startup is.
+	                                It gives you priceless information about your value proposition, in order to track your progress and improve continuously.
+	                            </p>
+	                      </div>
+	                  </div>
+	                  <div class="col-sm-4">
+                          <div class="footerWidget">
+                              <h3><strong> Location</strong></h3>
+                              <address>
+                                <p>
+                                  <i class="icon-location"></i>
+                                  Socrates #413<br>
+                                  Santiago, Metropolitan Region - Chile <br>
+                                  <i class="icon-phone"></i> +569 85566689 <br>
+                                  <i class="icon-mail-alt"></i> <a href="mailto:contacto@pivoter.cl">contacto@pivoter.cl</a>
+                                </p>
+                            </address>
+                          </div>
+                      </div>
+                    </div>
+
+                  <div class="row">
+
+                    <div class="col-md-3 col-xs-6">
+                      <%= image_tag( "clients/logo3.png", :class=>"img-responsive imgBorder clientLogo") %>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                      <%= image_tag( "clients/logo4.png", :class=>"img-responsive imgBorder clientLogo") %>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                      <%= image_tag( "clients/logo2.png", :class=>"img-responsive imgBorder clientLogo") %>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                      <%= image_tag( "clients/logo5.png", :class=>"img-responsive imgBorder clientLogo") %>
+                    </div>
+                  </div>
+                </div>
+            </section>
+            <section id="footerRights">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="pull-right">Copyright ©
+                                <%= Time.now.year %> <a href="http://www.pivoter.me/home" target="blank">Pivoter</a> / All rights reserved.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </footer>
+        <!-- End footer -->
+
+
+    </div>
+    <!-- global wrapper -->
+    <!-- End Document -->
+</body>
+</html>
